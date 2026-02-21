@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Train GPI (FARP anisotropic R)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/train_multitask.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "CUDA_VISIBLE_DEVICES": "0",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "Test 3D (Inference)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/test_3D.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "Run Ablation Suite",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_ablation.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      },
+      "justMyCode": true
+    }
+  ]
+}

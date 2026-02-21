@@ -1,0 +1,161 @@
+{
+  "run_a": {
+    "dir": "runs/final5_ablation_2/baseline/noise_none",
+    "pred_path": "runs/final5_ablation_2/baseline/noise_none\\results\\noise_none_s_uns_Stanford_VI_pred_AI.npy",
+    "true_path": "runs/final5_ablation_2/baseline/noise_none\\results\\noise_none_s_uns_Stanford_VI_true_AI.npy",
+    "ids_path": "runs/final5_ablation_2/baseline/noise_none\\results\\noise_none_s_uns_Stanford_VI_eval_trace_ids.npy"
+  },
+  "run_b": {
+    "dir": "runs/final5_ablation_2/proposed/noise_none",
+    "pred_path": "runs/final5_ablation_2/proposed/noise_none\\results\\noise_none_s_uns_Stanford_VI_pred_AI.npy",
+    "true_path": "runs/final5_ablation_2/proposed/noise_none\\results\\noise_none_s_uns_Stanford_VI_true_AI.npy",
+    "ids_path": "runs/final5_ablation_2/proposed/noise_none\\results\\noise_none_s_uns_Stanford_VI_eval_trace_ids.npy"
+  },
+  "common_eval_ids_reason": "both eval_trace_ids are identical, truncated to n=256",
+  "common_eval_ids_count": 256,
+  "common_eval_ids_head10": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "run_a_stats_true": {
+    "shape": [
+      256,
+      200
+    ],
+    "min": -2.262671709060669,
+    "max": 1.8577855825424194,
+    "mean": 0.12644469073622644,
+    "std": 1.0529535818028009
+  },
+  "run_a_stats_pred": {
+    "shape": [
+      256,
+      200
+    ],
+    "min": -0.4870021343231201,
+    "max": 0.3990747034549713,
+    "mean": -0.05191779870151549,
+    "std": 0.10053045533486603
+  },
+  "run_b_stats_true": {
+    "shape": [
+      256,
+      200
+    ],
+    "min": -2.262671709060669,
+    "max": 1.8577855825424194,
+    "mean": 0.12644469073622644,
+    "std": 1.0529535818028009
+  },
+  "run_b_stats_pred_raw": {
+    "shape": [
+      256,
+      200
+    ],
+    "min": -5.541872024536133,
+    "max": 6.657258987426758,
+    "mean": 0.4330996291722113,
+    "std": 2.1342546329261043
+  },
+  "run_b_stats_pred_fixed": {
+    "shape": [
+      256,
+      200
+    ],
+    "min": -5.541872024536133,
+    "max": 6.657258987426758,
+    "mean": 0.4330996291722113,
+    "std": 2.1342546329261043
+  },
+  "metrics_run_a": {
+    "R2": -0.16546781526186805,
+    "PCC": -0.6685463332228133,
+    "SSIM": -0.021341410946470584,
+    "PSNR": 11.185720967415307,
+    "MSE": 1.2921672729691374,
+    "MAE": 1.055598126244762,
+    "MedAE": 1.0719026941806078,
+    "SSE": 66158.96437601984,
+    "SST": 56766.015766085
+  },
+  "metrics_run_b_raw": {
+    "R2": -4.192470607500501,
+    "PCC": 0.00018706705488303298,
+    "SSIM": 0.006234282568945668,
+    "PSNR": 4.696983347468042,
+    "MSE": 5.756950554107546,
+    "MAE": 1.9626694767412902,
+    "MedAE": 1.7270547449588776,
+    "SSE": 294755.8683703064,
+    "SST": 56766.015766085
+  },
+  "metrics_run_b_fixed": {
+    "R2": -4.192470607500501,
+    "PCC": 0.00018706705488303298,
+    "SSIM": 0.006234282568945668,
+    "PSNR": 4.696983347468042,
+    "MSE": 5.756950554107546,
+    "MAE": 1.9626694767412902,
+    "MedAE": 1.7270547449588776,
+    "SSE": 294755.8683703064,
+    "SST": 56766.015766085
+  },
+  "alignment_report_run_b": {
+    "auto_applied": false,
+    "chosen_transform": "identity",
+    "orig_transform": "identity",
+    "pcc_gain": 0.0,
+    "r2_gain": 0.0,
+    "thresholds": {
+      "min_pcc_gain": 0.15,
+      "min_r2_gain": 0.5
+    },
+    "candidates": [
+      {
+        "name": "identity",
+        "shape": [
+          256,
+          200
+        ],
+        "R2": -4.192470607500501,
+        "PCC": 0.00018706705488303298,
+        "MSE": 5.756950554107546,
+        "SSE": 294755.8683703064,
+        "SST": 56766.015766085
+      },
+      {
+        "name": "flip_trace",
+        "shape": [
+          256,
+          200
+        ],
+        "R2": -4.546605383287523,
+        "PCC": -0.08717070995381461,
+        "MSE": 6.149583762420928,
+        "SSE": 314858.6886359515,
+        "SST": 56766.015766085
+      },
+      {
+        "name": "flip_depth",
+        "shape": [
+          256,
+          200
+        ],
+        "R2": -6.311508687628827,
+        "PCC": -0.5225361127440912,
+        "MSE": 8.106351903043075,
+        "SSE": 415045.2174358054,
+        "SST": 56766.015766085
+      }
+    ]
+  },
+  "conclusion": "对齐正常：R2 仍崩，优先排查训练侧/各向异性传播链路"
+}
